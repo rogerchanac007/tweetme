@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for object in objects %}
+    {% for object in object_list %}
    <p>{{object.content}}<br>
     {{object.user}}<br>
     {{object.timestamp}}</p><br>

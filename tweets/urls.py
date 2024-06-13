@@ -1,7 +1,11 @@
 from django.urls import path
-from .views import tweet_detail_view, tweet_list_view
+from .views import TweetDetailView, TweetListView, TweetCreateView, TweetUpdateView, TweetDeleteView
 
 urlpatterns = [
-    path('', tweet_list_view, name='tweet_list'),
-    path('1/', tweet_detail_view, name='tweet_detail')
+    path('', TweetListView.as_view(), name='tweet_list'),
+    path('create/', TweetCreateView.as_view(), name='tweet_create'),
+    path('delete/<pk>/', TweetDeleteView.as_view(), name='tweet_delete'),
+    path('<pk>/', TweetDetailView.as_view(), name='tweet_detail'),
+    path('<pk>/update/', TweetUpdateView.as_view(), name='tweet_update'),
+
 ]
